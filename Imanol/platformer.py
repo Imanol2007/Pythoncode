@@ -8,7 +8,7 @@ class Platformer(arcade.Window):
         arcade.set_background_color(arcade.color.BLACK)
        
         self.spawn_left = 200
-        self.spawn_bottom = 1000
+        self.spawn_bottom = 500
         self.player = Player( self.spawn_left, self.spawn_bottom)
         self.camera = Camera(self.player.center_x, self.player.center_y, self.width, self.height)
        
@@ -46,8 +46,8 @@ class Platformer(arcade.Window):
             self.player.left=self.spawn_left
             self.player.bottom=self.spawn_bottom
         self.player.update_animation(self.physics.can_jump())
+        print(self.camera.get_coordinates())
 
-        
         collisions = self.player.collides_with_list(self.obstacle)
         for Player in collisions:
             self.player.left = self.spawn_left
