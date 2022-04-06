@@ -4,10 +4,10 @@ import time
 
 
 class Player(arcade.Sprite):
-    def __init__(self):
+    def __init__(self, left, bottom):
         super().__init__("PNG/Characters/platformChar_idle.png", scale = 0.8)
-        self.left = 200
-        self.bottom = 350
+        self.left = left
+        self.bottom = bottom
         self.stand_right_textures =  arcade.load_texture("PNG/Characters/platformChar_idle.png")
         self.walk_right_textures = [
             arcade.load_texture("PNG/Characters/platformChar_walk1.png"),
